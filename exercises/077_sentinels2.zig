@@ -60,7 +60,9 @@ pub fn main() void {
     // length... You've actually solved this problem before!
     //
     // Here's a big hint: do you remember how to take a slice?
-    const printable = ???;
+    const printable = foo.data[0..foo.length];
+    // Using @ptrCast:
+    // const printable: [*:0]const u8 = @ptrCast(foo.data);
 
     print("{s}\n", .{printable});
 }
